@@ -1,0 +1,44 @@
+aid: cheerio
+name: Cheerio
+description: >-
+  Cheerio is a fast, flexible Node.js library for parsing and manipulating
+  HTML and XML, commonly used for server-side web scraping and data
+  extraction.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Scraping
+  - HTML Parsing
+  - Data Extraction
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/cheerio/refs/heads/main/apis.yml
+created: '2026-03-29'
+modified: '2026-03-29'
+specificationVersion: '0.19'
+apis:
+  - aid: cheerio:cheerio
+    name: Cheerio
+    description: >-
+      Cheerio is a fast, flexible Node.js library for parsing and manipulating
+      HTML and XML, commonly used for server-side web scraping and data
+      extraction.
+    humanURL: https://cheerio.js.org/
+    tags:
+      - Scraping
+      - HTML Parsing
+      - Data Extraction
+    properties:
+      - type: Documentation
+        url: https://cheerio.js.org/docs/intro
+      - type: Getting Started
+        url: https://cheerio.js.org/docs/intro
+common:
+  - type: Website
+    url: https://cheerio.js.org/
+  - type: Documentation
+    url: https://cheerio.js.org/docs/intro
+  - type: GitHub Organization
+    url: https://github.com/cheeriojs
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
