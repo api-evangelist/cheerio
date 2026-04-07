@@ -7,9 +7,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Scraping
-  - HTML Parsing
   - Data Extraction
+  - HTML Parsing
+  - Scraping
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cheerio/refs/heads/main/apis.yml
 created: '2026-03-29'
@@ -24,9 +24,9 @@ apis:
       extraction.
     humanURL: https://cheerio.js.org/
     tags:
-      - Scraping
-      - HTML Parsing
       - Data Extraction
+      - HTML Parsing
+      - Scraping
     properties:
       - type: Documentation
         url: https://cheerio.js.org/docs/intro
