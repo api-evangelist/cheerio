@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cheerio": "https://cheerio.js.org/schemas/",
+    "schema": "https://schema.org/",
+    "spdx": "https://spdx.org/licenses/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "SoftwareLibrary": {
+      "@id": "schema:SoftwareSourceCode",
+      "@context": {
+        "name": "schema:name",
+        "description": "schema:description",
+        "license": {
+          "@id": "schema:license",
+          "@type": "@id"
+        },
+        "version": "schema:softwareVersion",
+        "runtime": "cheerio:runtime",
+        "packageManager": "cheerio:packageManager",
+        "homepage": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "repository": {
+          "@id": "schema:codeRepository",
+          "@type": "@id"
+        }
+      }
+    },
+
+    "ParsedDocument": {
+      "@id": "cheerio:ParsedDocument",
+      "@context": {
+        "source": "cheerio:source",
+        "format": "cheerio:format",
+        "encoding": "cheerio:encoding",
+        "rootElement": "cheerio:rootElement"
+      }
+    },
+
+    "Selector": {
+      "@id": "cheerio:Selector",
+      "@context": {
+        "expression": "cheerio:expression",
+        "engine": "cheerio:engine",
+        "matchedCount": {
+          "@id": "cheerio:matchedCount",
+          "@type": "xsd:integer"
+        }
+      }
+    }
+  }
+}
