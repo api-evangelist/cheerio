@@ -1,0 +1,13 @@
+{
+  "repo": "cheerio",
+  "feeds": [
+    {
+      "source": "https://cheerio.js.org/blog",
+      "feed_url": "https://cheerio.js.org/blog/rss",
+      "saved": 2,
+      "title": "Cheerio Blog"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-05-03T23:25:09Z"
+}
