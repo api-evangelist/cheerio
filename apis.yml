@@ -1,6 +1,6 @@
 aid: cheerio
 name: Cheerio
-x-type: opensource
+kind: opensource
 description: >-
   Cheerio is a fast, flexible, and elegant Node.js library for parsing and
   manipulating HTML and XML using a jQuery-compatible API. It is widely used
