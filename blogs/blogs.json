@@ -5,9 +5,9 @@
       "source": "https://cheerio.js.org/blog",
       "feed_url": "https://cheerio.js.org/blog/rss",
       "title": "Cheerio Blog",
-      "saved": 0
+      "saved": 1
     }
   ],
-  "post_count": 2,
-  "fetched": "2026-05-09T20:17:51Z"
+  "post_count": 3,
+  "fetched": "2026-05-17T20:20:35Z"
 }
