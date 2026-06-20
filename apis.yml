@@ -10,7 +10,7 @@ description: >-
 type: Index
 position: Producer
 access: Open Source
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cheerio/refs/heads/main/apis.yml
 tags:
@@ -42,7 +42,7 @@ apis:
       text, and rendering HTML. It is commonly used in scraping
       pipelines, build tools, static site generators, and tests that need
       to operate over HTML content without launching a browser.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cheerio.js.org/
     tags:
       - Data Extraction
