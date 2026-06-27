@@ -69,7 +69,7 @@ apis:
         url: https://github.com/cheeriojs/cheerio/blob/main/CONTRIBUTING.md
       - type: Issues
         url: https://github.com/cheeriojs/cheerio/issues
-      - type: Releases
+      - type: ReleaseNotes
         url: https://github.com/cheeriojs/cheerio/releases
 common:
   - type: Website

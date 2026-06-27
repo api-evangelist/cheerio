@@ -2,8 +2,8 @@
   "repo": "cheerio",
   "feeds": [
     {
-      "source": "https://cheerio.js.org/blog/rss",
-      "feed_url": "https://cheerio.js.org/blog/rss",
+      "source": "https://cheerio.js.org/blog/rss.xml",
+      "feed_url": "https://cheerio.js.org/blog/rss.xml",
       "title": "",
       "saved": 0,
       "method": "feed"
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 3,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
