@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: cheerio.js.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 29 14:27:59 2026 GMT
+  hsts: false
+domains:
+- domain: js.org
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

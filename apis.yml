@@ -72,6 +72,8 @@ apis:
       - type: ReleaseNotes
         url: https://github.com/cheeriojs/cheerio/releases
 common:
+  - type: DomainSecurity
+    url: security/cheerio-domain-security.yml
   - type: Website
     url: https://cheerio.js.org/
   - type: Documentation
