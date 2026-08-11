@@ -84,6 +84,8 @@ apis:
       - type: ReleaseNotes
         url: https://github.com/cheeriojs/cheerio/releases
 common:
+  - type: SecurityPolicy
+    url: https://github.com/cheeriojs/cheerio/blob/main/SECURITY.md
   - type: DomainSecurity
     url: security/cheerio-domain-security.yml
   - type: Website
