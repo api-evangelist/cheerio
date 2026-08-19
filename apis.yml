@@ -42,7 +42,7 @@ tags:
   - XML
 created: '2026-03-29'
 modified: '2026-04-23'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
   - aid: cheerio:cheerio
     name: Cheerio
