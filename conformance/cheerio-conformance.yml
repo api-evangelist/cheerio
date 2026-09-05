@@ -1,0 +1,100 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://cheerio.js.org/docs/advanced/configuring-cheerio/;
+  https://cheerio.js.org/docs/basics/loading/;
+  https://cheerio.js.org/docs/basics/selecting/;
+  https://cheerio.js.org/docs/advanced/security/;
+  https://raw.githubusercontent.com/cheeriojs/cheerio/main/package.json
+note: >-
+  Cheerio publishes no HTTP contract, so the cross-cutting API standards (OAuth, OIDC,
+  RFC 9457, pagination, idempotency) are all not-applicable rather than failed — there is
+  no request/response surface for them to apply to. What IS assertable, and what matters
+  to a consumer of this library, is which parsing and selector standards it implements.
+  Every entry below cites the exact docs statement it rests on. No certifications or
+  compliance program is published, so NO Compliance pointer is emitted.
+domain: html-and-xml-parsing
+standards:
+  - id: whatwg-html-parsing
+    name: WHATWG HTML Standard — tree construction
+    conforms: true
+    evidence: >-
+      "parse5 — the default for HTML. It rigorously conforms to the HTML standard, so it
+      produces the same tree a browser would." — https://cheerio.js.org/docs/advanced/configuring-cheerio/
+    implementation: parse5 (default HTML parser)
+    caveat: >-
+      Only when the default parser is used. Passing xml: { xmlMode: false } or importing
+      cheerio/slim swaps in htmlparser2, which is faster and more forgiving but does not
+      apply HTML tree-construction rules.
+  - id: whatwg-html-encoding-sniffing
+    name: WHATWG HTML encoding sniffing algorithm
+    conforms: true
+    evidence: >-
+      "The methods that accept bytes — loadBuffer and decodeStream — run the HTML encoding
+      sniffing algorithm, so they will pick up a <meta charset> or a byte order mark."
+      — https://cheerio.js.org/docs/basics/loading/
+    scope: loadBuffer, decodeStream
+  - id: css-selectors
+    name: CSS Selectors (querySelectorAll-compatible syntax)
+    conforms: true
+    evidence: >-
+      "Cheerio finds elements using CSS selectors, the same syntax you would use in a
+      stylesheet or in document.querySelectorAll." Namespaced attribute selection follows
+      the CSS escaping rule for the colon. — https://cheerio.js.org/docs/basics/selecting/
+    implementation: cheerio-select over css-select
+    extensions: jQuery selector extensions (:contains, :has, :first, :eq, …) beyond the CSS specification
+  - id: jquery-api-compatibility
+    name: jQuery core API compatibility (subset, server-side)
+    conforms: partial
+    evidence: >-
+      The project describes itself as implementing a subset of core jQuery designed for the
+      server; the 1.1.0 and 1.2.0 release notes record deliberate alignment fixes
+      (".prop on document nodes", "align prop undefined handling with jQuery").
+      — https://github.com/cheeriojs/cheerio/releases
+    caveat: >-
+      Deliberately a subset. Cheerio does not implement a browser, so effects, events,
+      layout and AJAX are out of scope; the docs state it "never executes scripts,
+      evaluates expressions, or touches the network".
+  - id: xml-1.0
+    name: XML 1.0
+    conforms: false
+    evidence: >-
+      XML input is parsed by htmlparser2 in xmlMode, which the docs describe as "more
+      forgiving of malformed markup" — it is a lenient parser, not a conformant XML
+      processor. — https://cheerio.js.org/docs/advanced/configuring-cheerio/
+  - id: ecmascript-modules
+    name: ECMAScript modules + Node.js package exports
+    conforms: true
+    evidence: >-
+      package.json declares "type": "module" and a conditional exports map with import,
+      require and browser conditions for ".", "./slim" and "./utils".
+      — https://raw.githubusercontent.com/cheeriojs/cheerio/main/package.json
+  - id: semver
+    name: Semantic Versioning 2.0.0
+    conforms: true
+    evidence: Release tags follow semver, including a full rc series before 1.0.0. — https://github.com/cheeriojs/cheerio/releases
+  - id: spdx-mit
+    name: SPDX MIT license declaration
+    conforms: true
+    evidence: >-
+      package.json declares license MIT; a LICENSE file sits in the repository root.
+not_applicable:
+  - id: oauth2
+    reason: No HTTP API surface — cheerio runs in the consumer's own process.
+  - id: openid-connect
+    reason: No HTTP API surface.
+  - id: rfc9457-problem-details
+    reason: No HTTP API surface; errors are thrown JavaScript exceptions.
+  - id: pagination
+    reason: No HTTP API surface.
+  - id: idempotency
+    reason: No HTTP API surface; see conventions/cheerio-conventions.yml.
+  - id: openapi
+    reason: >-
+      No OpenAPI is published or derivable. STEP 0b contract discovery was run in full
+      against cheerio.js.org (openapi.json, swagger.json, api-docs, llms.txt, every named
+      /.well-known path, /apis.json) — all 404. There is no API host to probe because the
+      library is not a service.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,125 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://cheerio.js.org/docs/basics/loading/;
+  https://cheerio.js.org/docs/basics/selecting/;
+  https://cheerio.js.org/docs/advanced/configuring-cheerio/;
+  https://cheerio.js.org/docs/advanced/security/;
+  https://cheerio.js.org/docs/api/
+note: >-
+  Cheerio is an in-process Node.js/browser library, not an HTTP API. This file records
+  the cross-cutting semantics a consumer actually has to know — how a document is loaded,
+  which parser answers, how selectors behave, what the output is and is not safe for —
+  and records the HTTP-shaped dimensions (auth, pagination, rate-limit signaling,
+  idempotency, reversibility) as explicitly not-applicable rather than leaving them
+  silently absent. NO Idempotency pointer is emitted: there is no mutating remote surface
+  to replay-protect, and claiming one would be false.
+surface: in-process library (no network surface except the opt-in fromURL helper)
+authentication:
+  style: none
+  detail: >-
+    No credentials of any kind. The library runs inside the caller's process. The one
+    network-touching method, fromURL, makes the request the caller asked for and inherits
+    the caller's environment.
+entrypoints:
+  - name: load
+    input: string
+    note: The only entrypoint available in the browser build.
+  - name: loadBuffer
+    input: Buffer
+    note: Runs the HTML encoding sniffing algorithm; use when the encoding is unknown. Node.js only.
+  - name: stringStream
+    input: stream of decoded text
+    note: Streaming, known encoding. Node.js only.
+  - name: decodeStream
+    input: stream of raw bytes
+    note: Streaming, unknown encoding; sniffs the encoding. Node.js only.
+  - name: fromURL
+    input: URL
+    note: Cheerio fetches the page for you. Node.js only; the only method that touches the network.
+parser_selection:
+  default_html: parse5
+  default_xml: htmlparser2 (xmlMode)
+  rule: >-
+    parse5 is used automatically for HTML and rigorously conforms to the HTML standard;
+    setting the xml option switches to htmlparser2, which is faster, uses less memory and
+    is more forgiving. Setting xml: { xmlMode: false } uses htmlparser2 for HTML too.
+  slim_export: >-
+    Importing cheerio/slim always uses htmlparser2 and leaves parse5 out of the bundle —
+    the recommended import for browser environments.
+document_vs_fragment:
+  default: >-
+    load treats input as a complete document and wraps it in <html>, <head> and <body>,
+    exactly as a browser would.
+  fragment: Pass false as the third argument to parse the input as a fragment with no surrounding structure.
+selectors:
+  syntax: CSS selectors, the same syntax as document.querySelectorAll
+  extensions: jQuery selector extensions on top of CSS, via cheerio-select over css-select
+  escaping: >-
+    XML-namespaced attributes require the colon to be escaped, per the CSS specification —
+    $('[xml\\:id="main"]').
+  untrusted_input: >-
+    Never build a selector from untrusted input. Quoting is not sufficient — a double quote
+    in the value closes the attribute selector and the remainder is parsed as further
+    selector syntax, so a crafted value can match elements the caller never intended and
+    can make the engine do a large amount of work.
+output_safety:
+  sanitizer: false
+  rule: >-
+    Cheerio's output is markup, not safe markup. Script tags and event-handler attributes
+    survive parsing and serialization intact — correct parser behaviour, and it means
+    $.html() is exactly as trustworthy as its input. Run scraped markup through a dedicated
+    sanitizer (sanitize-html, DOMPurify) before rendering it in a browser.
+  text_vs_html: >-
+    text() strips markup structure but the returned string can still contain <, > and ";
+    dropping it into an HTML sink rebuilds markup. html(), append(), prepend(), before(),
+    after(), replaceWith() and wrap() all parse their argument as markup — passing user
+    input to any of them injects whatever tags it contains. Use text() when you mean text.
+  script_execution: never — cheerio does not execute scripts or evaluate expressions
+error_envelope:
+  style: thrown JavaScript exceptions
+  detail: No error envelope; there is no wire format. Type errors surface through the bundled TypeScript types.
+versioning:
+  style: semver on the npm package; see lifecycle/cheerio-lifecycle.yml
+idempotency:
+  coverage: na
+  supported: false
+  reason: >-
+    Not applicable. Idempotency keys exist to make a remote write safe to retry; cheerio
+    performs no remote writes. Every method mutates an in-memory tree the caller owns and
+    can simply re-run.
+  scope: []
+reversibility:
+  grade: na
+  supported: na
+  reason: >-
+    Not applicable. There is no external state to reverse — mutations apply to a DOM-like
+    structure held in the caller's own process, and are discarded when it is. Re-parsing the
+    original markup restores the prior state with no operation, window or provider involvement.
+  reversal_operations: []
+dry_run_mode:
+  supported: na
+  reason: Not applicable — no external effects to rehearse.
+pagination:
+  supported: na
+  reason: No HTTP API surface. Result sets are Cheerio collections traversed with .each(), .map(), .eq() and .length.
+rate_limits:
+  supported: na
+  reason: >-
+    No hosted service, so no request quota and no rate-limit response headers. See
+    rate-limits/cheerio-rate-limits.yml.
+request_tracing:
+  supported: na
+  reason: No requests to trace.
+metadata:
+  supported: na
+cross_links:
+  errors: null
+  lifecycle: lifecycle/cheerio-lifecycle.yml
+  authentication: null
+  rate_limits: rate-limits/cheerio-rate-limits.yml
+  conformance: conformance/cheerio-conformance.yml
+  security: security/cheerio-vulnerability-disclosure.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

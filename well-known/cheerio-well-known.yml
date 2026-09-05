@@ -1,0 +1,72 @@
+generated: '2026-09-05'
+method: probed
+source: live HTTPS probes of every host this record knows
+note: >-
+  Cheerio publishes no HTTP API, so the host set is the project's documentation site
+  only — cheerio.js.org is the registrable domain (js.org is a public suffix) and there
+  is no API baseURL, no OpenAPI servers[] host and no console host to add. Every named
+  discovery path returned 404 from the Astro-built docs site, which serves a real,
+  distinguishable 404 document (9,379 bytes, identical body on every miss) rather than
+  a catch-all 200. NO WellKnown / SecurityTxt pointer is emitted: this file records an
+  absence, and an absence must not be published as a presence. Cheerio's security policy
+  is real but lives in the GitHub repository (SECURITY.md), not at /.well-known/security.txt
+  — see security/cheerio-vulnerability-disclosure.yml.
+hit_count: 0
+soft_404_control:
+  path: /.well-known/cheerio-negative-control-7f3ab91c.json
+  status: 404
+  bytes: 9379
+  result: pass
+path_echo_control: pass
+hosts:
+  - host: https://cheerio.js.org
+    role: documentation + project website (registrable domain; js.org is a public suffix)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/apis.json
+        status: 404
+        file: null
+      - path: /apis.json
+        status: 404
+        file: null
+      - path: /apis.yml
+        status: 404
+        file: null
+      - path: /llms.txt
+        status: 404
+        file: null
+      - path: /openapi.json
+        status: 404
+        file: null
+      - path: /sitemap.xml
+        status: 404
+        file: null
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,101 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://registry.npmjs.org/cheerio (and sibling cheeriojs packages);
+  https://api.github.com/orgs/cheeriojs/repos
+note: >-
+  Cheerio is distributed as an npm library, not as a hosted API. The packages below
+  ARE the product surface. Versions and publish dates were read from the npm registry
+  metadata endpoint (registry.npmjs.org/<pkg>) on 2026-09-05. Only packages published
+  under the cheeriojs GitHub organization are marked official; css-select, htmlparser2,
+  domhandler and domutils are runtime dependencies maintained by the same lead
+  maintainer (fb55) in his own org and are recorded as official: false.
+packages:
+  - language: javascript
+    registry: npm
+    name: cheerio
+    url: https://www.npmjs.com/package/cheerio
+    install: npm install cheerio
+    official: true
+    version: 1.2.0
+    published: '2026-01-23'
+    license: MIT
+    repository: https://github.com/cheeriojs/cheerio
+    types: bundled
+    entrypoints:
+      - '.'
+      - ./slim
+      - ./utils
+    note: >-
+      Ships ESM + CommonJS + a browser build; TypeScript types are bundled. The
+      ./slim export drops parse5 and always uses htmlparser2, for browser bundles.
+  - language: javascript
+    registry: npm
+    name: cheerio-select
+    url: https://www.npmjs.com/package/cheerio-select
+    install: npm install cheerio-select
+    official: true
+    version: 2.1.0
+    published: '2022-05-16'
+    license: BSD-2-Clause
+    repository: https://github.com/cheeriojs/cheerio-select
+    note: >-
+      CSS selector engine supporting jQuery selectors, published under the cheeriojs
+      org. Last release 2022-05-16 — over three years before cheerio 1.2.0; the
+      package is stable rather than abandoned (it is a thin jQuery-selector layer
+      over css-select, which is released independently).
+  - language: javascript
+    registry: npm
+    name: dom-serializer
+    url: https://www.npmjs.com/package/dom-serializer
+    install: npm install dom-serializer
+    official: true
+    version: 3.1.1
+    published: '2026-05-02'
+    license: MIT
+    repository: https://github.com/cheeriojs/dom-serializer
+    note: Renders domhandler DOM nodes back to a string; published under the cheeriojs org.
+  - language: javascript
+    registry: cdn
+    name: cheerio
+    url: https://cdn.jsdelivr.net/npm/cheerio/
+    install: <script type="module" src="https://cdn.jsdelivr.net/npm/cheerio/+esm"></script>
+    official: false
+    version: null
+    published: null
+    note: >-
+      jsDelivr and unpkg mirror the npm package (data.jsdelivr.com reports latest 1.2.0),
+      but the CDN distribution is not published by the project and the documented URL form
+      is unpinned — a consumer cannot tell which build they are getting. version recorded
+      as null deliberately: checked, nothing pinned to record. Pin with
+      https://cdn.jsdelivr.net/npm/cheerio@1.2.0/+esm.
+  - language: javascript
+    registry: npm
+    name: css-select
+    url: https://www.npmjs.com/package/css-select
+    install: npm install css-select
+    official: false
+    version: 7.0.0
+    published: '2026-03-22'
+    license: BSD-2-Clause
+    repository: https://github.com/fb55/css-select
+    note: Selector compiler cheerio depends on; maintained by the cheerio lead maintainer in his own org, not under cheeriojs.
+  - language: javascript
+    registry: npm
+    name: htmlparser2
+    url: https://www.npmjs.com/package/htmlparser2
+    install: npm install htmlparser2
+    official: false
+    version: 12.0.0
+    published: '2026-03-20'
+    license: MIT
+    repository: https://github.com/fb55/htmlparser2
+    note: >-
+      The forgiving parser cheerio uses for XML (and optionally for HTML). Third-party
+      to the cheeriojs org, maintained by the same lead maintainer.
+counts:
+  total: 6
+  official: 3
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

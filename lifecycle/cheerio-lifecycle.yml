@@ -1,0 +1,54 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://github.com/cheeriojs/cheerio/releases;
+  https://github.com/cheeriojs/cheerio/blob/main/SECURITY.md;
+  https://cheerio.js.org/blog/cheerio-1.0/
+note: >-
+  Cheerio is a library, not a hosted service: there is no status page, no SLA and no
+  Sunset/Deprecation HTTP header surface, because there is no HTTP surface. Its lifecycle
+  contract is semver plus the supported-versions table in SECURITY.md. No StatusPage or
+  Deprecation pointer is emitted — asserting either would credit the project with an
+  operational surface it does not run.
+versioning:
+  scheme: semver
+  current: 1.2.0
+  current_released: '2026-01-23'
+  distribution: npm dist-tag `latest`
+  docs: https://github.com/cheeriojs/cheerio/releases
+  breaking_change_channel: major version bump, announced in the release notes and (for 1.0) a blog post
+support_policy:
+  url: https://github.com/cheeriojs/cheerio/blob/main/SECURITY.md
+  supported:
+    - '1.x — latest release only'
+  unsupported:
+    - '<1.0 — no security updates; users are asked to upgrade'
+  statement: Only the latest release on the 1.x branch receives security updates.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No published deprecation policy or sunset schedule. Deprecations have historically
+    been announced in major-release notes — the 1.0.0 release removed the deprecated
+    default Cheerio instance and static methods and simplified import paths, with the
+    migration described in the release notes and the 1.0 announcement post.
+  historical_removals:
+    - release: 1.0.0
+      date: '2024-08-09'
+      removed:
+        - Default Cheerio instance and static methods (deprecated before 1.0)
+        - Deep import paths such as cheerio/lib/slim (now cheerio/slim)
+      minimum_runtime: Node.js 18.17
+sla:
+  url: null
+  uptime_target: null
+  note: Not applicable — no hosted service.
+status_page: null
+runtime_support:
+  node: '>=18.17'
+  browser: yes, via the bundled browser build and the ./slim export
+  typescript: types bundled with the package
+deprecated_operations: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

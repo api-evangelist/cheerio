@@ -68,7 +68,7 @@ tags_raw:
   - Web Scraping
   - XML
 created: '2026-03-29'
-modified: '2026-04-23'
+modified: '2026-09-05'
 specificationVersion: '0.23'
 apis:
   - aid: cheerio:cheerio
@@ -111,6 +111,42 @@ apis:
       - type: ReleaseNotes
         url: https://github.com/cheeriojs/cheerio/releases
 common:
+  - type: Packages
+    name: Cheerio packages
+    url: packages/cheerio-packages.yml
+  - type: SDKs
+    name: Cheerio JavaScript library
+    url: packages/cheerio-packages.yml
+  - type: LLMsTxt
+    url: llms/cheerio-llms.txt
+  - type: Conformance
+    url: conformance/cheerio-conformance.yml
+  - type: Conventions
+    url: conventions/cheerio-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/cheerio-lifecycle.yml
+  - type: ChangeLog
+    name: Cheerio releases
+    url: changelog/cheerio-changelog.yml
+  - type: VulnerabilityDisclosure
+    url: security/cheerio-vulnerability-disclosure.yml
+  - type: Plans
+    url: plans/cheerio-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cheerio-rate-limits.yml
+  - type: FinOps
+    url: finops/cheerio-finops.yml
+  - type: GettingStarted
+    url: https://cheerio.js.org/docs/intro
+  - type: Blog
+    url: https://cheerio.js.org/blog/
+  - type: BlogRSS
+    url: https://cheerio.js.org/blog/rss.xml
+  - type: Support
+    name: GitHub Discussions
+    url: https://github.com/cheeriojs/cheerio/discussions
+  - type: ContributionGuide
+    url: https://github.com/cheeriojs/cheerio/blob/main/CONTRIBUTING.md
   - type: SecurityPolicy
     url: https://github.com/cheeriojs/cheerio/blob/main/SECURITY.md
   - type: DomainSecurity
@@ -186,3 +222,9 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v3
