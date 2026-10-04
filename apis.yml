@@ -46,7 +46,7 @@ tags:
   - MIT License
   - Node.js
   - npm
-  - Open-Source
+  - Open Source
   - Parser
   - Scraping
   - Server-Side
@@ -67,6 +67,7 @@ tags_raw:
   - Server-side
   - Web Scraping
   - XML
+  - Open-Source
 created: '2026-03-29'
 modified: '2026-09-05'
 specificationVersion: '0.23'
