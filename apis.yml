@@ -48,9 +48,8 @@ tags:
   - npm
   - Open Source
   - Parser
-  - Scraping
-  - Server-Side
   - Web Scraping
+  - Server-Side
   - XML
 tags_raw:
   - Data Extraction
@@ -85,6 +84,12 @@ apis:
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cheerio.js.org/
     tags:
+      - Data Extraction
+      - HTML Parsing
+      - jQuery
+      - Node.js
+      - Web Scraping
+    tags_raw:
       - Data Extraction
       - HTML Parsing
       - jQuery
