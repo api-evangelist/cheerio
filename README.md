@@ -1,4 +1,4 @@
-# Cheerio (cheerio)
+# Cheerio
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,95 +66,112 @@
 
 Cheerio is a fast, flexible, and elegant Node.js library for parsing and manipulating HTML and XML using a jQuery-compatible API. It is widely used for server-side web scraping, HTML transformation, data extraction, and static site generation. Cheerio is MIT licensed and distributed as the cheerio npm package, maintained under the cheeriojs GitHub organization.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/cheerio/refs/heads/main/apis.yml)
+**Areas:** Data Extraction · DOM · HTML · HTML Parsing · jQuery · MIT License · Node.js · npm · Open Source · Parser · Web Scraping · Server-Side
 
-## Scope
+## Cheerio on APIs.io
 
-- **Type:** Index
-- **Position:** Producer
-- **Access:** Open Source
-- **License:** MIT
+Everything profiled for Cheerio is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cheerio/](https://apis.io/providers/cheerio/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Data Extraction
-- DOM
-- HTML
-- HTML Parsing
-- jQuery
-- MIT License
-- Node.js
-- npm
-- Open Source
-- Parser
-- Scraping
-- Server-side
-- Web Scraping
-- XML
+- [Cheerio](https://apis.io/apis/cheerio/cheerio/) — Cheerio implements a subset of core jQuery designed for the server. It parses markup into a traversable, manipulable DOM-like data structure and exposes a…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-29
-- **Modified:** 2026-04-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### JSON-LD (1)
 
-### Cheerio
+Linked-data contexts for the provider's vocabulary.
 
-Cheerio implements a subset of core jQuery designed for the server. It parses markup into a traversable, manipulable DOM-like data structure and exposes a familiar jQuery-style API for selecting elements, traversing the tree, modifying attributes, extracting text, and rendering HTML.
+- [Cheerio Context](https://apis.io/jsonld/cheerio/cheerio-context/)
 
-**Human URL:** [https://cheerio.js.org/](https://cheerio.js.org/)
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://cheerio.js.org/docs/intro)
-- [Getting Started](https://cheerio.js.org/docs/intro)
-- [API Reference](https://cheerio.js.org/docs/api)
-- [GitHub Repository](https://github.com/cheeriojs/cheerio)
-- [npm Package](https://www.npmjs.com/package/cheerio)
-- [License](https://github.com/cheeriojs/cheerio/blob/main/LICENSE)
-- [Contribution Guide](https://github.com/cheeriojs/cheerio/blob/main/CONTRIBUTING.md)
-- [Issues](https://github.com/cheeriojs/cheerio/issues)
-- [Releases](https://github.com/cheeriojs/cheerio/releases)
+- [Cheerio Domain Security](https://apis.io/security/cheerio/cheerio-domain-security/)
+- [Cheerio Vulnerability Disclosure](https://apis.io/security/cheerio/cheerio-vulnerability-disclosure/)
 
-## Common Properties
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cheerio Plans Pricing](https://apis.io/plans/cheerio/cheerio-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cheerio Rate Limits](https://apis.io/rate-limits/cheerio/cheerio-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Cheerio Finops](https://apis.io/finops/cheerio/cheerio-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://cheerio.js.org/)
 - [Documentation](https://cheerio.js.org/docs/intro)
-- [API Reference](https://cheerio.js.org/docs/api)
-- [GitHub Organization](https://github.com/cheeriojs)
-- [GitHub Repository](https://github.com/cheeriojs/cheerio)
-- [npm Package](https://www.npmjs.com/package/cheerio)
-- [License (MIT)](https://github.com/cheeriojs/cheerio/blob/main/LICENSE)
-- [JSON-LD Context](json-ld/cheerio-context.jsonld)
+- [Getting started](https://cheerio.js.org/docs/intro)
+- [API reference](https://cheerio.js.org/docs/api)
+- [Support](https://github.com/cheeriojs/cheerio/discussions)
+- [Blog](https://cheerio.js.org/blog/)
+- [GitHub](https://github.com/cheeriojs)
 
-## Features
+## API Evangelist rating
 
-- jQuery-Compatible API
-- Server-Side HTML Parsing
-- XML Parsing
-- DOM Traversal and Manipulation
-- CSS Selector Engine
-- parse5 and htmlparser2 integrations
-- Streaming Parser
-- TypeScript Types
-- Browser-Compatible Builds
+**Kin Score 22.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 6.7 |
+| Contract governance | 18.2 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 0.0 |
 
-- Web Scraping
-- Server-Side HTML Manipulation
-- Static Site Generation
-- Data Extraction Pipelines
-- HTML Email Templating
-- SEO Auditing Tools
-- Content Migration
-- Test HTML Assertions
-- RSS and Atom Feed Generation
-- HTML Sanitization Tooling
+**Agent readiness 2.5** — human-only
 
-## Maintainers
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-**FN:** Kin Lane
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-**Email:** kin@apievangelist.com
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cheerio/](https://apis.io/providers/cheerio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cheerio: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cheerio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
